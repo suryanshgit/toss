@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+        <h1 class="header">Player 1st won !</h1>
+        <div class="container">
+            <div class="d1">
+                <h4 class="inner-heading">Player 1</h4>
+                <img class="player1" src="Images/dice1.png" alt="ludo dice image">
+            </div>
+            <div class="d2">
+                <h4 class="inner-heading">Player 2</h4>
+                <img class="player2" src="Images/dice2.png" alt="ludo dice image">
+
+            </div><br>
+            
+        </div>
+        <button class="btn">Click Me</button>
+        <script>
+            var btn=document.querySelector(".btn");
+            const player1=document.querySelector(".player1");
+            const player2=document.querySelector(".player2");
+            const d1=document.querySelector(".d1");
+            const d2=document.querySelector(".d2");
+            const header=document.querySelector(".header");
+
+            btn.addEventListener("click",()=>{
+                let a=Math.floor(Math.random()*6);
+                let b=Math.floor(Math.random()*6);
+                let str1="Images/dice"+a+".png";
+                let str2="Images/dice"+b+".png";
+
+               player1.setAttribute("src",str1);
+               player2.setAttribute("src",str2);
+
+               if(a>b){
+               header.innerText=`Player 1st Won !`;
+               }
+               else if(a==b)
+               header.innerText='Match draw';
+               else
+               header.innerText='Player 2nd Won !';
+
+
+            })
+        </script>
+
+</body>
+</html>
